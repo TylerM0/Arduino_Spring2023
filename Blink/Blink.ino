@@ -45,4 +45,6 @@ void loop() {
   delay(1000);                       // wait for a second
   digitalWrite(12, LOW);    // turn pin 12 to LOW so LED turns off
   delay(1000);                       // wait for a second
+
+ 
 }
