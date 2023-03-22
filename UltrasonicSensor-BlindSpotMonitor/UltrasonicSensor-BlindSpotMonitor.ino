@@ -7,12 +7,12 @@
  */
 
 
-#define trigPin 2
-#define echoPin 3
-#define LEDlampRed 4
-#define  LEDlampYellow 5
-#define LEDlampGreen 6 
-#define soundbuzzer 7
+int trigPin = 7;
+int echoPin = 6;
+int LEDlampBlue = 9;
+int LEDlampWhite = 10;
+int LEDlampGreen = 11; 
+int soundbuzzer = 3;
 int sound  = 500;
 
 
@@ -20,8 +20,8 @@ void setup() {
   Serial.begin (9600);
   pinMode(trigPin,  OUTPUT);
   pinMode(echoPin, INPUT);
-  pinMode(LEDlampRed, OUTPUT);
-  pinMode(LEDlampYellow,  OUTPUT);
+  pinMode(LEDlampBlue, OUTPUT);
+  pinMode(LEDlampWhite,  OUTPUT);
   pinMode(LEDlampGreen, OUTPUT);
   pinMode(soundbuzzer, OUTPUT);
 }
@@ -43,17 +43,17 @@ void  loop() {
   }
   
   if (distance < 20) {
-    digitalWrite(LEDlampYellow,  HIGH);
+    digitalWrite(LEDlampWhite,  HIGH);
 }
   else {
     digitalWrite(LEDlampYellow,LOW);
   }
   if (distance  < 5) {
-    digitalWrite(LEDlampRed, HIGH);
+    digitalWrite(LEDlampBlue, HIGH);
     sound = 1000;
 }
   else  {
-    digitalWrite(LEDlampRed,LOW);
+    digitalWrite(LEDlampBlue,LOW);
   }
  
   if (distanceincm > 5 ||  distanceinsm <= 0){
