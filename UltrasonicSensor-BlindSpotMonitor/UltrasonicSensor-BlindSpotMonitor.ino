@@ -42,13 +42,13 @@ void  loop() {
       digitalWrite(LEDlampGreen,  LOW);
   }
   
-  if (distance < 20) {
+  if (distanceincm < 20) {
     digitalWrite(LEDlampWhite,  HIGH);
 }
   else {
-    digitalWrite(LEDlampYellow,LOW);
+    digitalWrite(LEDlampWhite,LOW);
   }
-  if (distance  < 5) {
+  if (distanceincm  < 5) {
     digitalWrite(LEDlampBlue, HIGH);
     sound = 1000;
 }
@@ -56,14 +56,14 @@ void  loop() {
     digitalWrite(LEDlampBlue,LOW);
   }
  
-  if (distanceincm > 5 ||  distanceinsm <= 0){
+  if (distanceincm > 5 ||  distanceincm <= 0){
     Serial.println("Outside the permissible range of distances");
     noTone(soundbuzzer);
   }
   else {
-    Serial.print(distance);
+    Serial.print(distanceincm);
     Serial.println("  cm");
-    tone(buzzer, sound);
+    tone(soundbuzzer, sound);
   }
   
   delay(300);
